@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WhatsApp</title>
+</head>
+<style>
+
+    html, body{
+        background-color: #1a1a1a;
+    }
+    ::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+        display: none;
+        background: transparent;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+</style>
+<body>
+<webview id="foo" src="https://web.whatsapp.com/"
+         useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.131 Safari/537.36"
+         style="display:inline-flex; width:100vw; height:100vh" allowpopups></webview>
+
+<script>
+    onload = () => {
+        const webview = document.querySelector('webview')
+        const indicator = document.querySelector('.indicator')
+
+        webview.addEventListener('dom-ready', function () {
+            webview.insertCSS(`
+          .dark{
+            --app-background: #1a1a1a !important;
+            --app-background-deeper: #1a1a1a !important;
+            --rich-text-panel-background: #1a1a1a !important;
+            --app-background-deeper: #1a1a1a !important;
+            --background-default: #1a1a1a !important;
+            --intro-background: #1a1a1a !important;
+            --panel-header-background: #1a1a1a !important;
+            --search-input-container-background: #1a1a1a !important;
+            --panel-background-lighter: #1a1a1a !important;
+            --startup-background: #1a1a1a !important;
+            --panel-background-colored: #1a1a1a !important;
+            --drawer-section-background: #1a1a1a !important;
+            --panel-background-colored-deeper: #1a1a1a !important;
+            --modal-background: #1a1a1a !important;
+            --incoming-background-deeper: #1a1a1a !important;
+            --panel-background: #1a1a1a !important;
+            --compose-panel-background: #1a1a1a !important;
+            --avatar-background: #1a1a1a !important;
+            --button-primary: #1a1a1a !important;
+            --checkbox-mark: #1a1a1a !important;
+            --drawer-background: #1a1a1a !important;
+            --drawer-gallery-background: #1a1a1a !important;
+            --drawer-section-background: #1a1a1a !important;
+            --location-cluster-background: #1a1a1a !important;
+            --conversation-panel-background: #1a1a1a !important;
+            --panel-background-deeper: #1a1a1a !important;
+            --media-viewer-background: #1a1a1a !important;
+
+
+            --search-input-background: #2A2A2A !important;
+            --media-editor-image-caption-input-background: #2A2A2A !important;
+            --panel-input-background: #2A2A2A !important;
+            --compose-input-background: #2A2A2A !important;
+            --background-default-hover: #2A2A2A !important;
+            --background-default-active: #2A2A2A !important;
+            --dropdown-background-hover: #2A2A2A !important;
+            --input-hover-background: #2A2A2A !important;
+            --chat-marker-background: #2A2A2A !important;
+            --chat-marker-admin-border: #2A2A2A !important;
+            --chat-marker-admin-background: #2A2A2A !important;
+            --status-background-hover: #2A2A2A !important;
+
+
+            --modal-backdrop: rgba(10,10,10, .85) !important;
+
+            --dropdown-background: #191919 !important;
+            --media-gallery-thumb-background: #191919 !important;
+
+            --chat-marker-border: #191919 !important;
+                        --system-message-background: #191919 !important;
+            --incoming-background: #2A2A2A !important;
+
+            --popup-panel-background: #111111 !important;
+            --outgoing-background: #2A2A2A !important;
+            --outgoing-background-deeper: #202020 !important;
+            /*--unread-marker-background: #395866 !important;
+            --unread-timestamp: #395866 !important;
+            --unread-marker-text: #ffffff !important;*/
+
+
+            --button-plain-background: #fd5f51 !important;
+
+          }
+          html[dir] .o--vV{
+          border-radius: 12px !important;
+          background-color: #262626 !important;
+          box-shadow:
+0px 77px 108px rgba(0, 0, 0, 0.39), 0px 35.5994px 49.9317px rgba(0, 0, 0, 0.289253), 0px 20.3692px 28.5698px rgba(0, 0, 0, 0.244445), 0px 12.3639px 17.3416px rgba(0, 0, 0, 0.21058), 0px 7.44982px 10.4491px rgba(0, 0, 0, 0.17942), 0px 4.14854px 5.81874px rgba(0, 0, 0, 0.145555), 0px 1.78426px 2.5026px rgba(0, 0, 0, 0.100747)
+ !important;
+          }
+          html[dir="ltr"] .zaKsw,
+          html[dir=ltr] .a-HbF{
+            border-left: 0 !important;
+          }
+          ._2nY6U{
+                   border: 0 !important;
+            border-radius: 12px !important;
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+            margin-inline: 8px !important;
+          }
+          ._3m_Xw{
+          border: 0 !important;
+          padding-block: 0px !important;
+          }
+
+          html[dir] .dark ._3yWey{
+            border: 0 !important;
+            background-color: #1a1a1a !important;
+          }
+
+html[dir=ltr] ._3OvU8,
+html[dir] ._2nY6U._2_TVt ._3OvU8, html[dir] ._2nY6U._2_TVt:after,
+html[dir] .vq6sj:focus, html[dir] .vq6sj:hover{
+border: 0 !important;
+}
+
+._3Bc7H{
+background: #1a1a1a !important;
+}
+
+div[data-list-scroll-container],
+.KPJpj{
+background: #1a1a1a !important;
+}
+
+._2v5gS,
+html[dir=ltr] ._3bqa4,
+html[dir=ltr] ._2HUCB,
+._1NZyY, ._1cMSa
+._2x6Y5,
+._1iwk6,
+[data-asset-chat-background-dark],
+html[dir] ._9-YHG,
+html[dir=ltr] ._1Lu8G,
+._2x6Y5{
+background: #1a1a1a !important;
+}
+
+html[dir] ._153i9{
+box-shadow: 0px 118px 149px rgba(0, 0, 0, 0.18), 0px 54.555px 68.8872px rgba(0, 0, 0, 0.133502), 0px 31.2151px 39.4157px rgba(0, 0, 0, 0.112821), 0px 18.9473px 23.925px rgba(0, 0, 0, 0.0971907), 0px 11.4166px 14.4159px rgba(0, 0, 0, 0.0828093), 0px 6.35751px 8.0277px rgba(0, 0, 0, 0.0671794), 0px 2.73432px 3.45266px rgba(0, 0, 0, 0.0464984) !important;
+}
+html[dir=ltr] .dark .three ._33LGR, html[dir=rtl] ._33LGR,
+html[dir=ltr] .three ._23P3O,
+html[dir=ltr] .dark .three ._2cYbV{
+border-right: 0 !important;
+}
+
+
+._1LcQK{
+background: #121212 !important;
+border-radius: 18px !important;
+margin-top: 6px !important;
+margin-right: 8px !important;
+}
+
+html[dir] .dark ._23P3O{
+box-shadow: none !important;
+}
+
+._1PFn9{
+overflow-x: hidden !important;
+overflow-y: visible !important;
+overflow: visible !important;
+}
+
+html[dir=ltr] ._33LGR,
+html[dir=ltr] ._23P3O,
+html[dir=ltr] ._2BU3P{
+border-left: 0 !important;
+}
+
+html[dir] ._2nY6U._2_TVt:after, html[dir] .vq6sj:hover:after{
+border: 0!important;
+}
+
+html[dir] ._2cYbV{
+box-shadow: 0px -104px 460px rgba(0, 0, 0, 0.02), 0px -48.0824px 212.672px rgba(0, 0, 0, 0.0148335), 0px -27.5116px 121.686px rgba(0, 0, 0, 0.0125356), 0px -16.6994px 73.8625px rgba(0, 0, 0, 0.010799), 0px -10.0621px 44.5054px rgba(0, 0, 0, 0.00920104), 0px -5.60323px 24.7835px rgba(0, 0, 0, 0.00746438), 0px -2.40991px 10.6592px rgba(0, 0, 0, 0.00516649) !important;
+}
+
+
+
+
+          `)
+
+            webview.openDevTools()
+        });
+
+        const loadstart = () => {
+            indicator.innerText = 'loading...'
+        }
+
+        const loadstop = () => {
+            indicator.innerText = ''
+        }
+
+        webview.addEventListener('did-start-loading', loadstart)
+        webview.addEventListener('did-stop-loading', loadstop)
+
+    }
+
+    var handleRedirect = (e, url) => {
+        if (url != webContents.getURL()) {
+            e.preventDefault()
+            require('electron').shell.openExternal(url)
+        }
+    }
+
+    webContents.on('will-navigate', handleRedirect)
+    webContents.on('new-window', handleRedirect)
+
+
+</script>
+
+
+</body>
+</html>
